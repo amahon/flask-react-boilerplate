@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require('path');
 const webpack = require('webpack');
 
 const config = {
@@ -11,14 +11,14 @@ const config = {
 
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: "[name].js"
+    filename: '[name].js'
   },
 
   devServer: {
     host: '0.0.0.0',
     port: 8080,
     proxy: {
-      "/api": "http://server:5000"
+      '/api': 'http://server:5000'
     }
   },
 
@@ -34,15 +34,15 @@ const config = {
       {
         test: /\.scss$/,
         use: [{
-          loader: "style-loader" // creates style nodes from JS strings
+          loader: 'style-loader' // creates style nodes from JS strings
         }, {
-          loader: "css-loader" // translates CSS into CommonJS
+          loader: 'css-loader' // translates CSS into CommonJS
         }, {
-          loader: "sass-loader" // compiles Sass to CSS
+          loader: 'sass-loader' // compiles Sass to CSS
         }]
       },
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader'
       }
@@ -52,4 +52,4 @@ const config = {
 };
 
 
-module.exports = config
+module.exports = config;

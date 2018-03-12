@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import './app.scss';
 
-import App from './App';
+import App from './App.jsx';
 
 window.onload = () => {
   'use strict';
